@@ -3,7 +3,11 @@ docker-image-viewer
 
 Docker Image Viewer
 
-usage: `./docker-image-viewer image.tar`
+Usage:
+```bash
+docker save your-image > image.tar
+./docker-image-viewer image.tar
+```
 
 
 Build
