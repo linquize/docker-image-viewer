@@ -1,0 +1,16 @@
+cmake_minimum_required(VERSION 3.10)
+
+if(NOT DEFINED CMAKE_TOOLCHAIN_FILE)
+	set(CMAKE_TOOLCHAIN_FILE "${CMAKE_SOURCE_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake")
+endif()
+
+project(docker-image-viewer CXX)
+add_executable(docker-image-viewer div.cpp)
+find_path(archive_INCLUDES archive.h)
+find_library(archive_LIBRARY archive REQUIRED)
+target_include_directories(docker-image-viewer PRIVATE ${archive_INCLUDES})
+target_link_libraries(docker-image-viewer PRIVATE ${archive_LIBRARY})
+find_package(jsoncpp CONFIG REQUIRED)
+target_link_libraries(docker-image-viewer PRIVATE jsoncpp_lib)
+find_package(ZLIB REQUIRED)
+target_link_libraries(docker-image-viewer PRIVATE ZLIB::ZLIB)
