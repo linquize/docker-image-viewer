@@ -23,8 +23,8 @@ cd vcpkg
 ./bootstrap-vcpkg.sh
 ./vcpkg install libarchive[core] jsoncpp
 cd ..
-mkdir -p build
-cd build
-cmake .. -G Ninja
+mkdir -p out/build
+cd out/build
+cmake ../.. -G Ninja
 cmake --build .
 ```
