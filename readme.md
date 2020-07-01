@@ -21,7 +21,6 @@ System Requirement: MSVC 2019 on Windows; g++ 9 on Linux
 sudo apt-get update && sudo apt-get install -y tar unzip curl git g++ cmake ninja-build
 cd vcpkg
 ./bootstrap-vcpkg.sh
-./vcpkg install libarchive[core] jsoncpp
 cd ..
 mkdir -p out/build
 cd out/build
