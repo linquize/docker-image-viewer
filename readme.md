@@ -33,12 +33,12 @@ System Requirement: MSVC 2019
 
 ## Linux
 
-System Requirement: g++ 9
+System Requirement:
+- g++ 9+
+- cmake 3.13+
 
 ```bash
 sudo apt-get update && sudo apt-get install -y tar zip unzip curl git g++ cmake ninja-build
-mkdir -p out/build
-cd out/build
-cmake ../.. -G Ninja
-cmake --build .
+cmake -S . -B out/build -G Ninja
+cmake --build out/build
 ```
