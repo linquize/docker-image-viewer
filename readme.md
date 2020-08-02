@@ -37,8 +37,26 @@ System Requirement:
 - g++ 9+
 - cmake 3.13+
 
+Ubuntu
 ```bash
 sudo apt-get update && sudo apt-get install -y tar zip unzip curl git g++ cmake ninja-build
+```
+
+OpenSUSE
+```bash
+zypper install -y tar gzip bzip2 xz zip unzip curl git gcc-c++ cmake ninja
+```
+
+Alpine
+```bash
+apk add tar zip unzip curl git g++ cmake ninja
+export VCPKG_FORCE_SYSTEM_BINARIES=1
+cd vcpkg
+./bootstrap-vcpkg.sh -useSystemBinaries
+```
+
+Then use cmake to build
+```bash
 cmake -S . -B out/build -G Ninja
 cmake --build out/build
 ```
